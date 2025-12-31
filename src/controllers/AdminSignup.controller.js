@@ -39,7 +39,11 @@ const AdminSignup = async (req, res) => {
       }
     );
 
-    res.cookie("token", token);
+    res.cookie("token", token, {
+      httpOnly: true, // prevents JS access
+      secure: true, // required for HTTPS in production
+      sameSite: "None", // required for cross-origin
+    });
 
     return res.status(201).json({
       success: true,
