@@ -10,7 +10,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(
   cors({
-    origin: "https://vokings-client-hry51wbl8-ri-reyans-projects.vercel.app",
+    origin: "https://vokings-client.vercel.app",
     credentials: true,
   })
 );
